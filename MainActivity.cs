@@ -173,17 +173,17 @@ namespace TremorFreeMe
                 items = await usersTable.ToCollectionAsync();
                 error.Text = "Attempting to connect....";
             }
-#pragma warning disable CS0168 // The variable 'e' is declared but never used
+            
             catch (Exception e)
-#pragma warning restore CS0168 // The variable 'e' is declared but never used
+
             {
-                error.Text = "qqqqqqqqqqqqqqqqqqqq";
+                error.Text = "Error";
             }
 
 
             if (exception != null)
             {
-                error.Text = "wwwwwwwwwwwwwwwwwwwwwwwwwww";
+                error.Text = "Error";
             }
             else
             {
@@ -192,7 +192,7 @@ namespace TremorFreeMe
                 error.Text = items.Count.ToString();
                 for (int i = 0; i < items.Count; i++)
                 {
-                    error.Text = "eeeeeeeeeeeeeeeeeeeeeeeeeee";
+                   
                     if (items[i].Username == usernameTxt.Text)
                     {
                         error.Text = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
@@ -201,14 +201,14 @@ namespace TremorFreeMe
                 }
                 if (index == -1)
                 {
-                    error.Text = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+                
                     error.Text = "Name doesn't exist";
                     await Task.Delay(4000);
                     error.Text = "";
                 }
                 else
                 {
-                    error.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+              
                     if (items[index].Password == Crypt(passTxt.Text))
                     {
 
