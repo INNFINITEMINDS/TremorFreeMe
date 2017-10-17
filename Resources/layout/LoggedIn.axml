@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="#94cfe4">
+    <TextView
+        android:text="TremorFreeMe"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/heart_txt"
+        android:layout_marginTop="15dip"
+        android:textColor="#f2f2f2"
+        android:layout_marginLeft="150dip"
+        android:textSize="30dip"
+        android:layout_centerHorizontal="true" />
+    <ImageButton
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:background="@drawable/circle"
+        android:id="@+id/round_btn"
+        android:layout_marginTop="250dip"
+        android:layout_marginLeft="280dip" />
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/dev_reck"
+        android:layout_marginTop="80dip"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#ff00ffff"
+        android:background="@drawable/circle"
+        android:foregroundTint="#00000000" />
+    <ImageButton
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:background="@drawable/circle"
+        android:id="@+id/plus_btn"
+        android:layout_marginLeft="280dip"
+        android:layout_marginTop="370dip" />
+    <ImageButton
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:background="@drawable/circle"
+        android:id="@+id/minus_btn"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="370dip" />
+    <TextView
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_checktxt"
+        android:layout_marginTop="280dip"
+        android:layout_marginLeft="0dip"
+        android:textColor="#000000" />
+    <TextView
+        android:text="Intensity : 100%"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/value_txt"
+        android:layout_marginTop="320dip"
+        android:layout_marginLeft="100dip"
+        android:textColor="#f2f2f2"
+        android:textSize="25dp" />
+    <ProgressBar
+        android:id="@+id/ProgressBar"
+        android:layout_width="180dip"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_marginTop="391dip" />
+    <Button
+        android:id="@+id/close"
+        android:layout_width="50dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dip"
+        android:layout_marginLeft="290dip"
+        android:text="X"
+        android:textSize="25dip" />
+    <Button
+        android:text="Change Frequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/send_btn"
+        android:layout_marginTop="470dip" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbtext"
+        android:layout_marginTop="435dip"
+        android:hint="Send a frequency 1-20 Hz" />
+  <VideoView
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:id="@+id/video"
+  android:layout_centerInParent="true" />
+</RelativeLayout>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <AdditionalAndroidResourcePaths>
+    <AdditionalAndroidResourcePath>C:\Users\bikia\AppData\Local\Xamarin\Xamarin.Android.Wearable\1.0.0\embedded</AdditionalAndroidResourcePath>
+    <AdditionalAndroidResourcePath>C:\Users\bikia\AppData\Local\Xamarin\Xamarin.Android.Wearable\5.0.77\embedded</AdditionalAndroidResourcePath>
+  </AdditionalAndroidResourcePaths>
+  <AdditionalJavaLibraryReferences>
+    <AdditionalJavaLibraryReference>C:\Users\bikia\AppData\Local\Xamarin\Xamarin.Android.Support.v13\20.0.0\content\support\v13\android-support-v13.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>C:\Users\bikia\AppData\Local\Xamarin\Xamarin.Android.Wearable\1.0.0\embedded\classes.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>C:\Users\bikia\AppData\Local\Xamarin\Xamarin.Android.Wearable\5.0.77\embedded\classes.jar</AdditionalJavaLibraryReference>
+  </AdditionalJavaLibraryReferences>
+  <AdditionalNativeLibraryReferences />
+</Paths>

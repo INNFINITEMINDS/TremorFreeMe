@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#94cfe4">
+  
+  <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/username_txt"
+        android:hint="Username"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textCursorDrawable="@drawable/XMLFile1"
+        android:layout_marginTop="120dip"
+        android:gravity="center" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password_pass"
+        android:hint="Password"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textCursorDrawable="@drawable/XMLFile1"
+        android:gravity="center"
+        android:layout_marginTop="20dip" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/error"
+        android:textColor="#ff0000"
+        android:textSize="20dip"
+        android:layout_marginTop="20dip" />
+    <Button
+        android:text="Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lgn_btn"
+        android:backgroundTint="#fffafafa"
+        android:textColor="#94cfe4"
+        android:layout_marginTop="25dip" />
+    <Button
+        android:text="Sign up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sgnup_btn"
+        android:textColor="#94cfe4"
+        android:backgroundTint="#fffafafa" />
+</LinearLayout>
