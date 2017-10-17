@@ -44,21 +44,15 @@ namespace TremorFreeMe
         System.Timers.Timer timer;
         private BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.DefaultAdapter;
         private BluetoothSocket btSocket = null;
-#pragma warning disable CS0169 // The field 'LoggedIn.dataToSend' is never used
         private Java.Lang.String dataToSend;
-#pragma warning restore CS0169 // The field 'LoggedIn.dataToSend' is never used
         private Stream outStream = null;
-#pragma warning disable CS0414 // The field 'LoggedIn.inStream' is assigned but its value is never used
         private Stream inStream = null;
-#pragma warning restore CS0414 // The field 'LoggedIn.inStream' is assigned but its value is never used
-        public string address = "98:D3:33:80:87:76";
+        public string address = "";                         /* YOURS BLUETOOTH'S MAC ADDRESS */
         private static UUID MY_UUID = UUID.FromString("00001101-0000-1000-8000-00805F9B34FB");
         bool Bt_on = false;
         bool dev_on = false;
         ImageButton bt_btn;
-#pragma warning disable CS0414 // The field 'LoggedIn.timercount' is assigned but its value is never used
         int timercount=0;
-#pragma warning restore CS0414 // The field 'LoggedIn.timercount' is assigned but its value is never used
         ISharedPreferences prefs;
         ImageButton dev;
         users mainUser;
@@ -73,22 +67,17 @@ namespace TremorFreeMe
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-          //  ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.LoggedIn);
-
-            //Toolbar will now take on default Action Bar characteristics
             txted = FindViewById<EditText>(Resource.Id.tbtext);
             freq_but = FindViewById<Button>(Resource.Id.send_btn);
             this.RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
             prog = FindViewById<ProgressBar>(Resource.Id.ProgressBar);
             video = FindViewById<VideoView>(Resource.Id.video);
         video.Visibility = ViewStates.Gone;
-
             close = FindViewById<Button>(Resource.Id.close);
             close.Visibility = ViewStates.Gone;
             prog.DrawingCacheBackgroundColor = Android.Graphics.Color.Aqua;
-            prog.ProgressDrawable.SetColorFilter(Android.Graphics.Color.ParseColor("#C93766"), Android.Graphics.PorterDuff.Mode.Multiply);
-           
+            prog.ProgressDrawable.SetColorFilter(Android.Graphics.Color.ParseColor("#C93766"), Android.Graphics.PorterDuff.Mode.Multiply);          
             intensity = FindViewById<TextView>(Resource.Id.value_txt);
             plus=FindViewById<ImageButton>(Resource.Id.plus_btn);
             minus = FindViewById<ImageButton>(Resource.Id.minus_btn);
@@ -100,16 +89,13 @@ namespace TremorFreeMe
             minus.Visibility = ViewStates.Visible;
             dev = FindViewById<ImageButton>(Resource.Id.dev_reck);
             dev.SetImageResource(Resource.Drawable.off_pic);
-            dev.Visibility = ViewStates.Visible;///////////////////////////////
-           
+            dev.Visibility = ViewStates.Visible;///////////////////////////////           
             bttxt = FindViewById<TextView>(Resource.Id.bt_checktxt);
             bttxt.Visibility = ViewStates.Invisible;
             bttxt.Text = mBluetoothAdapter.IsEnabled.ToString();
             bttxt.TextChanged += Bttxt_TextChanged;
             prefs = MainActivity.prefs;
-           mainUser = MainActivity.main_User;
-           
-
+           mainUser = MainActivity.main_User;          
             prog.Progress = 25;
             mainUser.PrefIntens = 25;
             intensity.Text = "Intensity : "+25+"%";
@@ -117,31 +103,24 @@ namespace TremorFreeMe
                 var prefEditor = prefs.Edit();
                 prefEditor.PutString("remembered", json);
                 prefEditor.Commit();
-            
-            heart_txt = FindViewById<TextView>(Resource.Id.heart_txt);
-            //  heart_txt.SetTextColor(Android.Graphics.Color.Black);
-           // heart_txt.Text = PackageName;
+            heart_txt = FindViewById<TextView>(Resource.Id.heart_txt);      
             bt_btn = FindViewById<ImageButton>(Resource.Id.round_btn);
             bt_btn.SetImageResource(Resource.Drawable.mar);
             bt_btn.SetBackgroundColor(Android.Graphics.Color.Transparent);
-           // heart_txt.Text = mainUser.Fname;
             dev.SetBackgroundColor(Android.Graphics.Color.Transparent);
             
-             // dev_btn.FindViewById<ImageButton>(Resource.Id);
+             
              /////SENSORS////
              mSensorManager = (SensorManager)GetSystemService(SensorService);
             mHeartRateSensor = mSensorManager.GetDefaultSensor(SensorType.HeartRate);
             mSensorManager.RegisterListener(this, mHeartRateSensor, SensorDelay.Fastest);
-            ///////////////
+
             /////////TIMERS/////////////////
            timer = new System.Timers.Timer();
            timer.Interval = 500;
            timer.Start();
             timer.Elapsed += Timer_Elapsed;
-            ///////////////////////////
-            ///////////ACTIVE DIRECTORY AZURE//////////////////
-
-            ///////////////////////////////////
+       
             bt_btn.Click += But_Click;
            
             dev.Click += Dev_Click;
@@ -267,7 +246,7 @@ namespace TremorFreeMe
                 Bt_on = false; ;
                 btflag = true;
                 dev.SetImageResource(Resource.Drawable.off_pic);
-                //bt_btn.SetImageResource(Resource.Drawable.bt_on1);
+                
             }
         }
        
@@ -310,7 +289,7 @@ namespace TremorFreeMe
      
         private Task btcheck()
         {
-         //   btflag = false;
+         
         
             if (mBluetoothAdapter.IsEnabled)
             {
@@ -335,7 +314,7 @@ namespace TremorFreeMe
             var fullPath = String.Format("android.resource://{0}/{1}", PackageName, Resource.Drawable.instruct);
 
             video.SetMediaController(new MediaController(this));
-            // int resourceID = Context.Resources.GetIdentifier(fileName, "raw", Context.PackageName);
+           
 
             video.SetVideoPath(fullPath);
 
@@ -344,49 +323,7 @@ namespace TremorFreeMe
            
             video.Start();
             close.Visibility = ViewStates.Visible;
-            /*   System.Timers.Timer timer1;
-               timer1 = new System.Timers.Timer();
-               timer1.Interval = 10;
-               timer1.Start();
-               timer1.Elapsed += delegate
-               {
-                   timer1.Stop();
-                   if (video.CurrentPosition > 24000)
-                   {
-                       video.StopPlayback();
-                       video.Visibility = ViewStates.Gone;
-                       video.Dispose();
-                   }
-                   else
-                   {
-                       timer1.Interval = 10;
-                       timer1.Start();
-                   }
-
-
-               };
-               */
-
-
-
-
-
-            /*  if (mBluetoothAdapter.IsEnabled)
-              {
-                  if (Bt_on)
-                  {
-                      bt_Disconnect();
-                  }
-                  else
-                  {
-                      bt_Connect();
-
-                  }
-              }else
-              {
-                  Toast.MakeText(this, "You must enable bluetooth to connect with device",
-                         ToastLength.Short).Show();
-              }*/
+         
         }
 
 
@@ -435,13 +372,13 @@ namespace TremorFreeMe
                       ToastLength.Short).Show();
                 Bt_on = true;
              
-              //  bt_btn.SetImageResource(Resource.Drawable.bt_on1);
+          
                 
                 devNotFound = false;
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
+
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
           
                 Toast.MakeText(this, "Device not found... ",
@@ -453,9 +390,9 @@ namespace TremorFreeMe
                     btSocket.Close();
 
                 }
-#pragma warning disable CS0168 // The variable 'e' is declared but never used
+
                 catch (System.Exception e)
-#pragma warning restore CS0168 // The variable 'e' is declared but never used
+
                 {
                 }
 
@@ -497,9 +434,9 @@ namespace TremorFreeMe
             {
                 outStream = btSocket.OutputStream;
             }
-#pragma warning disable CS0168 // The variable 'e' is declared but never used
+
             catch (System.Exception e)
-#pragma warning restore CS0168 // The variable 'e' is declared but never used
+
             {
 
             }
@@ -510,9 +447,9 @@ namespace TremorFreeMe
                 outStream.WriteByte(byt2);
 
             }
-#pragma warning disable CS0168 // The variable 'e' is declared but never used
+
             catch (System.Exception e)
-#pragma warning restore CS0168 // The variable 'e' is declared but never used
+
             {
 
             }
