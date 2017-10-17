@@ -98,8 +98,6 @@ namespace TremorFreeMe
             MobileServiceInvalidOperationException exception = null;
             try
             {
-                // This code refreshes the entries in the list view by querying the TodoItems table.
-                // The query excludes completed TodoItems.
                 MainActivity.items = await MainActivity.usersTable.ToCollectionAsync();
 
             }
