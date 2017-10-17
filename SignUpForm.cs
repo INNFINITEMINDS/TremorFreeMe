@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -47,13 +46,11 @@ namespace TremorFreeMe
             male = FindViewById<CheckBox>(Resource.Id.checkBox1);
             female = FindViewById<CheckBox>(Resource.Id.checkBox2);
             male.ButtonDrawable.SetColorFilter(Android.Graphics.Color.White,Android.Graphics.PorterDuff.Mode.SrcIn);
-            female.ButtonDrawable.SetColorFilter(Android.Graphics.Color.White, Android.Graphics.PorterDuff.Mode.SrcIn);
-           
+            female.ButtonDrawable.SetColorFilter(Android.Graphics.Color.White, Android.Graphics.PorterDuff.Mode.SrcIn);           
             male.Checked = true;
             female.Checked = false;
             male.CheckedChange += Male_CheckedChange;
             female.CheckedChange += Female_CheckedChange;
-
             submit_btn.Click += async (object sender, EventArgs e) =>
             {
                 if (sex != "" && dis.Text!="" && disoff.Text!="" && fname.Text!="" && lname.Text!="" && username.Text!="" && pass.Text!= "" )
