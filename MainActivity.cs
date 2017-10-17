@@ -32,7 +32,8 @@ namespace TremorFreeMe
         EditText passTxt;
 
         TextView error;
-        public static MobileServiceClient MobileService = new MobileServiceClient("https://tremortest1.azurewebsites.net");
+        public static MobileServiceClient MobileService = new MobileServiceClient(""); /* CLIENT'S URL 1. We dont' publish tremorfreeme's client url.
+                                                                                                       2. We reccomend you to add security for accessing your database*/
         public static users main_User;
         public static MobileServiceCollection<users, users> items;
         public static IMobileServiceTable<users> usersTable;
